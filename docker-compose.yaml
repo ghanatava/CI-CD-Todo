@@ -1,0 +1,7 @@
+version: '3.9'
+
+services:
+  web:
+    image: "shivamkumar28dec/pushing-by-jenkins:latest"
+    ports:
+      - "3000:3000"
