@@ -17,9 +17,11 @@ pipeline {
             DOCKERHUB = credentials("DOCKERHUB")
         }
         steps{
-            sh "docker login -u $DOCKERHUB_USR -p '$DOCKERHUB_PSW' "
-            sh "docker tag todo $DOCKERHUB_USR/todo:latest"
-            sh "docker push $DOCKERHUB_USR/todo:latest"
+            sh '''
+               docker login -u $DOCKERHUB_USR -p $DOCKERHUB_PSW 
+               docker tag todo $DOCKERHUB_USR/todo:latest
+               docker push $DOCKERHUB_USR/todo:latest
+             '''
         }
     }
 
