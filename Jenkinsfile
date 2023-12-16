@@ -29,7 +29,7 @@ pipeline {
         steps {
             sshagent(credentials: ['ubuntu']){
                 sh "scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/todo/docker-compose.yaml ubuntu@ec2-3-27-228-183.ap-southeast-2.compute.amazonaws.com:/home/ubuntu/docker-compose.yaml"
-                sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-27-228-183.ap-southeast-2.compute.amazonaws.com 'docker compose up' || true "
+                sh "ssh -o StrictHostKeyChecking=no ubuntu@ec2-3-27-228-183.ap-southeast-2.compute.amazonaws.com 'docker compose up -d' || true "
             }
         }
     }
