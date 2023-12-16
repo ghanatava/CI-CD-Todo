@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    stages {
     stage ("checkout"){
         steps{
             git url: "https://github.com/ghanatava/CI-CD-Todo.git", branch:"main"
@@ -30,4 +31,6 @@ pipeline {
             }
         }
     }
+    }
+
 }
